@@ -8,7 +8,7 @@ from agents.basic_agent import BasicAgent
 from agents.openai_assistant import OpenAIAssistant
 from agents.tool_agent import WeatherAgent
 from memory.semantic import SemanticMemory
-from pipelines.poem_writer import PoemWriterPipeline
+from workflows.poem_writer import PoemWriterPipeline
 
 from autogen_agentchat.teams import RoundRobinGroupChat
 from autogen_agentchat.conditions import TextMentionTermination, MaxMessageTermination, ExternalTermination
