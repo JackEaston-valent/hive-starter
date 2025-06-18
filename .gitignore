@@ -88,3 +88,6 @@ coverage.xml
 # Memory files (specific to this project)
 memory/*.json
 memory/*.txt 
+
+# project specific
+data/chroma_db/
