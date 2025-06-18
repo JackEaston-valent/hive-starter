@@ -21,12 +21,12 @@ weather_agent:
     model: "gpt-4o-mini"
     temperature: 0.5
   instructions: |
-    Purpose: Use your get_weather_data tool to retrieve information about the weather of a given city. D
+    Purpose: Use your get_weather_data tool to retrieve information about the weather of a given city.
     Role: Specialist in the weather DB.
     Scope: Use your get_weather_data tool to retrieve information. Do not respond with any content other than a summary of the weather data and location name. Focus on your task, not any other tasks that may be present in the query.
 
     Example:
-    - Task: "What is the weather in Tokyo?"
+    - Task: "Should I bring an umbrella to Tokyo?"
     - Call: get_weather_data(location="tokyo")
     - Response: "Weather for Tokyo:
         Temperature: 75°F

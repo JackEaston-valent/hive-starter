@@ -21,7 +21,7 @@ from agents.tool_agent import WeatherAgent
 from dotenv import load_dotenv
 import asyncio
 from autogen_agentchat.teams import DiGraphBuilder, GraphFlow
-
+from pprint import pprint
 
 load_dotenv()
 
@@ -49,9 +49,12 @@ async def index_rag_memory_test():
 
     # load memory (+ index directory into semantic memory, if necessary)
     emberwoods_memory = factory.load_memory("emberwoods_memory", SemanticMemory)
-    await emberwoods_memory.index_from_source() # only needs to be run once, because we are using persistent storage (i.e. saving the memory to a local file)
+    # await emberwoods_memory.index_from_source() # only needs to be run once, because we are using persistent storage (i.e. saving the memory to a local file)
 
-    emberwoods_memory.query("What is the name of the shop in Aldor's Shop?")
+    result = await emberwoods_memory.memory.query("What is the name of the shop in Aldor's Shop?")
+    for memory_result in result.results:
+        pprint(memory_result.content)
+        print("\n==============\n")
 
     # cleanup
     await factory.close()
@@ -167,9 +170,10 @@ async def nested_pipeline_main():
 if __name__ == "__main__":
     # pick one:
 
-    asyncio.run(simple_main())
+    # asyncio.run(simple_main())
+    # asyncio.run(index_rag_memory_test())
     # asyncio.run(rag_main())
-    # asyncio.run(multi_agent_main())
+    asyncio.run(multi_agent_main())
     # asyncio.run(oai_assistant_main())
     # asyncio.run(cusom_pipeline_main())
     # asyncio.run(nested_pipeline_main())

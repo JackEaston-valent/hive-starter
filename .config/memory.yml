@@ -1,5 +1,5 @@
 emberwoods_memory:
-  source: "/home/jeaston/Valent/Internal/hive-starter/data/The Emberwoods"
+  source: "./data/The Emberwoods"
   source_type: "directory"
   chunking_config:
     chunk_size: 1000
@@ -7,7 +7,7 @@ emberwoods_memory:
   retrieval_config:
     k: 2
     score_threshold: 0.4
-    persistence_path: "/home/jeaston/Valent/Internal/hive/data/chroma_db"
+    persistence_path: "./data/chroma_db"
   
   
   
