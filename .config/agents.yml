@@ -21,9 +21,9 @@ weather_agent:
     model: "gpt-4o-mini"
     temperature: 0.5
   instructions: |
-    Purpose: Use your get_weather_data tool to retrieve information about the weather of a given city.
-    Role: Specialist in the weather DB.
-    Scope: Use your get_weather_data tool to retrieve information. Do not respond with any content other than a summary of the weather data and location name. Focus on your task, not any other tasks that may be present in the query.
+    You will be provided with a query. Search for the city mentioned in the user's query and use your get_weather_data tool to retrieve information about the weather of that city.
+    Do not respond with your purpose, role, or scope. Respond with the weather of the city that is mentioned in the query.
+    Note in the following example, the query is not specifically asking about the weather of Tokyo, but you should still use your tool to provide context for subsequent agents.
 
     Example:
     - Task: "Should I bring an umbrella to Tokyo?"
